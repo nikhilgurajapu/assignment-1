@@ -9,7 +9,7 @@ from rest_framework import status
 @api_view(['POST'])
 def book_list(request):
     if request.method == 'POST':
-        serializer = booksserializers(book_list, data=request.data)
+        serializer = booksserializers( data=request.data)
         if serializer.is_valid():
             serializer.save()          
         return Response(serializer.data)
